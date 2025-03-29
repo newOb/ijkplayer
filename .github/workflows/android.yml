@@ -19,7 +19,7 @@ jobs:
         java-version: 1.8
 
     - name: Cache android ndk
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: $ANDROID_HOME/ndk/16.1.4479499
         key: ${{ runner.os }}-ndk16.1.4479499
@@ -30,7 +30,7 @@ jobs:
 
 
     - name: Cache android extra
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: |
           extra/ffmpeg
@@ -59,7 +59,7 @@ jobs:
 
     - name: Cache ffmpeg build cache
       id: cache-ffmpeg-build
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: |
           android/contrib/build/output-armv7a
