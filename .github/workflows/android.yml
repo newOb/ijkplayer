@@ -87,7 +87,7 @@ jobs:
         ./gradlew assembleRelease -PIJK_CXX_STL=c++_shared
 
     - name: Upload apk
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: ijkdemo-release
         path: |
