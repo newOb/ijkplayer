@@ -36,6 +36,7 @@ import tv.danmaku.ijk.media.example.fragments.FileListFragment;
 
 public class FileExplorerActivity extends AppActivity {
     private Settings mSettings;
+    private String ttt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
