@@ -29,7 +29,7 @@ jobs:
       run: sudo add-apt-repository universe && sudo apt-get update
 
     - name: Install libncurses5
-      run: sudo apt-get update && sudo apt-get install -y libncurses5
+      run: sudo apt-get update && sudo apt-get install -y libncurses5-dev
 
     - name: Setup ndk
       run: |
