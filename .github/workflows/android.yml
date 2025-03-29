@@ -23,6 +23,11 @@ jobs:
       with:
         path: $ANDROID_HOME/ndk/16.1.4479499
         key: ${{ runner.os }}-ndk16.1.4479499
+
+        
+    - name: Enable universe repository
+      run: sudo add-apt-repository universe && sudo apt-get update
+
     - name: Install libncurses5
       run: sudo apt-get update && sudo apt-get install -y libncurses5
 
