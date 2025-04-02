@@ -2,8 +2,7 @@ name: iOS Release
 
 on:
   push:
-    tags:
-      - 'f*'
+    branches: [ master, main ]
 
 jobs:
   build:
