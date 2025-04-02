@@ -1,1 +1,31 @@
+name: iOS Release
 
+on:
+  push:
+    branches: [ master, main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+
+    - name: Extract tag name
+      id: tag
+      uses: actions/github-script@0.2.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          return context.payload.ref.replace('refs/tags/', '');
+
+    - name: Create Release
+      id: create_release
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Release ${{ steps.tag.outputs.result }}
+        draft: false
+        artifacts: "./ios/CocoaPodsPub/IJKMediaPlayer.tar.gz"
+        allowUpdates: true
